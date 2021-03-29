@@ -8,13 +8,15 @@ body{
     margin:0
 }
 .header{
-    grid-area: header;
+   
     background-color:#203040;
     color:white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:0.5rem;
+    padding-bottom:100px;
+   
+    padding-top:30px;
 }
 .header-links a{
     text-decoration: none;
@@ -60,14 +62,14 @@ body{
     grid-template-areas: "header" "main" "footer";
     grid-template-columns: 1fr;
     grid-template-rows: 5rem 1fr 5rem;
-    height:100%;
+   
 }
 .menu{
   
   text-align: center;
   margin:0;
   padding: 0;
-  background-color: pink;
+  background-color: rgb(27, 134, 120);
 }
 .menu ul{
   list-style-type: none;
@@ -82,25 +84,6 @@ body{
   color: white;
   font-weight: bold;
 }
-.active, .menu ul li:hover{
-background-color: #5e8fc0;
-border-radius:3px;
-}
-.sub-menu1{
-  display: none;
-}
-/*.menu ul li:hover .sub-menu1{
-  display: block;
-  position:absolute;
-  background-color: #5e8fc0;
-  margin-top:15px;
-  margin-left:-15px;
-}
-.menu ul li:hover .sub-menu1 ul{
-  display: block;
-  margin: 10px;
-  
-}*/
 
 a{
     text-decoration: none;
@@ -163,44 +146,56 @@ a:hover{
   margin-left: 30px;
   padding-top: 10px;
 }
-.categories{
-  background-color: bisque;
+
+.category-section{
+  background-color:aqua ;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding-bottom: 20px;
+  border-radius: 5px;
 }
-
-
- .outer-grid {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 4px;
- }
- .inner-grid {
-    flex: 25%;
-    max-width: 25%;
-    padding: 0 4px;
-    margin-left:80px;
- }
- .inner-grid img {
-    margin-top: 8px;
-    width: 100%;
-    padding: 10px;
-    opacity:0.8;
-    
- }
- @media screen and (max-width: 800px) {
-    .inner-grid {
-       flex: 50%;
-       max-width:500px;
-    }
- }
- @media screen and (max-width: 600px) {
-    .inner-grid {
-       flex: 100%;
-       max-width:400px;
-       margin-left:30px;
-    }
- }
- .collectionouter-grid {
+.image{
+  margin-left: 30px;
+  position:relative;
+  width:400px;
+}
+.image__img{
+  display:block;
+  width:100%;
+}
+.image__overlay{
+  position: absolute;
+  left:0;
+  width:100%;
+  height:100%;
+  top:0;
+  background-color: rgba(0, 0, 0, 0.6); 
+  color:#ffff;
   display: flex;
+  
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.image__overlay > *{
+  transform: translateY(20px);
+  transition: transform 0.25rem;
+}
+.image__overlay:hover > *{
+  transform: translateY(0);
+}
+.image__overlay:hover{
+  opacity: 1;
+}
+.image__description{
+  margin-top: 100px;
+  font-size: 25px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.collectionouter-grid {
+    display: flex;
   flex-wrap: wrap;
   padding: 0 4px;
 }
@@ -215,8 +210,6 @@ a:hover{
   width: 100%;
   padding: 10px;
   opacity:0.8;
-  background-color: #380804;
-  
 }
 @media screen and (max-width: 800px) {
   .collectioninner-grid {
@@ -232,51 +225,70 @@ a:hover{
   }
 }
 .collection{
-  background-color: #203040;
+  border-radius: 5px;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding-left: 0px;
+  background-color: pink;
 }
-.collection h3{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 22px;
-  color: #f1f8f7;
-  margin-left: 30px;
-  padding-top: 10px;
+#collection-h4{
+  color: #203040;
+  margin-left:120px ;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-
 
 .trendingouter-grid {
   display: flex;
   flex-wrap: wrap;
   padding: 0 4px;
- 
+  grid-gap:50px;
   padding-bottom: 80px;
+  
 }
 .trendinginner-grid {
   flex: 25%;
-  max-width: 25%;
+  max-width:20%;
   padding: 0 4px;
-  margin-left:80px;
+  margin-left:20px;
+  margin-top: 20px;
 }
 
 .trendinginner-grid img {
   margin-top: 8px;
-  width: 100%;
-  padding: 10px;
-  opacity:0.8;
-  
-  
+  width:200px;
+  padding:5px;
 }
 #trending{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color:indigo;
   align-items: center;
-  margin-left:150px;
+  margin-left:60px;
 }
 #dollar{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color:rgb(12, 6, 15);
   align-items: center;
-  margin-left:150px;
+  margin-left:60px;
   padding-top: 0px;
+}
+#bag-add{
+  background-color: green;
+  color:white;
+  width:100px;
+  height:30px;
+  margin-left:190px;
+  border-radius: 5px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#bag-add:hover{
+  
+  cursor: pointer;
+  background-color: pink;
+  color:#203040;
+}
+#bag-add a{
+  color:white;
+  text-decoration: none;
 }
 @media screen and (max-width: 800px) {
   .trendinginner-grid {
@@ -292,7 +304,10 @@ a:hover{
   }
 }
 .trending{
-  background-color: #203040;
+  margin-top:30px;
+  margin-left: 70px;
+  margin-right: 70px;
+
 }
 .trending h3{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -300,6 +315,33 @@ a:hover{
   color: #f1f8f7;
   margin-left: 30px;
   padding-top: 10px;
+}
+.trend-title{
+  background-color: rgb(75, 14, 14);
+  display: inline-flex;
+width:1380px;
+color:white;
+}
+.trend-title ul{
+  display: inline-flex;
+  margin-left:750px;
+  color:white;
+}
+.trend-title ul li{
+  cursor: pointer;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  list-style-type: none;
+  margin-left: 20px;
+  color:white;
+}
+.trend-title ul li a{
+  color:white;
+  text-decoration: none;
+}
+.trend-title ul li a:hover{
+  color:orange;
+  text-decoration: none;
+  transition: opacity 0.25s;
 }
 .inner-trending{
   background-color:rgb(185, 170, 170)
@@ -330,4 +372,47 @@ a:hover{
   cursor: pointer;
   border-radius: 5px;
   text-align: center;
+}
+.menu2{
+  
+  text-align: center;
+  margin:0;
+  padding-bottom:30px;
+  background-color: pink;
+}
+
+.menu2 ul{
+  list-style-type: none;
+  display: inline-flex;
+  background-color:rgba(22, 12, 12, 0.74);
+  color:white;
+  width:1480px;
+  
+}
+.menu2 ul li{
+  width:120px;
+  margin: 15px;
+  
+  margin-left:200px;
+ 
+}
+#kurtas{
+ position: relative;
+  bottom:100px;
+  left:180px;
+  display: none;
+}
+.inner-grid:hover{
+  cursor: pointer;
+  background-color: #203040;
+}
+.categories{
+  margin-top:20px;
+  margin-left:85px;
+  display: inline-flex;
+  
+}
+h4{
+  margin-left:120px ;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
