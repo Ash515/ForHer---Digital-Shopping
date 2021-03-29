@@ -101,14 +101,7 @@ border-radius:3px;
   margin: 10px;
   
 }*/
-.footer{-
-    background-color:#203040;
-    color:white;
-    grid-area: footer;
-    display: flex;
-  padding-left: 700px;
-  align-items: center;
-}
+
 a{
     text-decoration: none;
 }
