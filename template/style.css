@@ -4,7 +4,7 @@ html{
 }
 body{
     font:1.6rem Helvetica;
-    height: 100vh;
+  
     margin:0
 }
 .header{
@@ -62,8 +62,46 @@ body{
     grid-template-rows: 5rem 1fr 5rem;
     height:100%;
 }
-
-.footer{
+.menu{
+  
+  text-align: center;
+  margin:0;
+  padding: 0;
+  background-color: pink;
+}
+.menu ul{
+  list-style-type: none;
+  display: inline-flex;
+  }
+.menu ul li{
+  width:120px;
+  margin: 15px;
+}
+.menu ul li a{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+.active, .menu ul li:hover{
+background-color: #5e8fc0;
+border-radius:3px;
+}
+.sub-menu1{
+  display: none;
+}
+/*.menu ul li:hover .sub-menu1{
+  display: block;
+  position:absolute;
+  background-color: #5e8fc0;
+  margin-top:15px;
+  margin-left:-15px;
+}
+.menu ul li:hover .sub-menu1 ul{
+  display: block;
+  margin: 10px;
+  
+}*/
+.footer{-
     background-color:#203040;
     color:white;
     grid-area: footer;
@@ -272,4 +310,31 @@ a:hover{
 }
 .inner-trending{
   background-color:rgb(185, 170, 170)
+}
+
+.inner-grid {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.inner-grid img {
+  width: 100%;
+  height: auto;
+}
+
+.inner-grid .btn {
+  position: absolute;
+  top:100px;
+  left: 500;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
 }
